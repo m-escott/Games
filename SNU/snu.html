@@ -29,7 +29,17 @@
 
 <div id="dos"></div>
 
-<script src="js-dos.js"></script>
+<!-- <script src="js-dos.js"></script> -->
+<script>  
+Dos(document.getElementById("jsdos"), {
+    wdosboxUrl: "https://v8.js-dos.com/v6.22/dosbox.js",
+}).ready((fs, main) => {
+    fs.extract("https://v8.js-dos.com/bundles/digger.jsdos").then(() => {
+        main(["-conf", ".jsdos/dosbox.conf"]);
+    });
+});  
+</script>
+  
 <script>
   Dos(document.getElementById("dos"), {
     url: "snu.zip",
@@ -45,6 +55,7 @@
 </body>
 
 </html>
+
 
 
 
